@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex: 1;
+            margin: 0 10px 10px 0;
+            min-width: 200px;
+        }
+        .stat-card h2 {
+            margin-top: 0;
+            color: #2196F3;
+            font-size: 16px;
+        }
+        .stat-card p {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .notes-container {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .note-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .note-item:last-child {
+            border-bottom: none;
+        }
+        .note-title {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+        .note-content {
+            color: #666;
+            margin: 0 0 10px 0;
+            white-space: pre-line;
+        }
+        .note-meta {
+            font-size: 12px;
+            color: #999;
+        }
+        .button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background: #0b7dda;
+        }
+        .chart-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .chart {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1;
+            margin-right: 10px;
+        }
+        .chart:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Notes App Dashboard</h1>
+            <p>Overview of your notes data</p>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <h2>Total Notes</h2>
+                <p id="total-notes">5</p>
+            </div>
+            <div class="stat-card">
+                <h2>Notes Created Today</h2>
+                <p id="notes-today">2</p>
+            </div>
+            <div class="stat-card">
+                <h2>Average Note Length</h2>
+                <p id="avg-length">175 chars</p>
+            </div>
+            <div class="stat-card">
+                <h2>Untitled Notes</h2>
+                <p id="untitled-notes">1</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart">
+                <h2>Notes by Month</h2>
+                <div id="month-chart">
+                    <!-- Chart would be rendered here in a real implementation -->
+                    <p style="text-align: center; padding: 40px 0; color: #999;">
+                        [Monthly Notes Chart]
+                    </p>
+                </div>
+            </div>
+            <div class="chart">
+                <h2>Word Count Distribution</h2>
+                <div id="word-count-chart">
+                    <!-- Chart would be rendered here in a real implementation -->
+                    <p style="text-align: center; padding: 40px 0; color: #999;">
+                        [Word Count Chart]
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="notes-container">
+            <h2>Recent Notes</h2>
+            
+            <div class="note-item">
+                <h3 class="note-title">Shopping List</h3>
+                <p class="note-content">Milk
+Eggs
+Bread
+Cheese
+Apples
+Bananas</p>
+                <p class="note-meta">Created: 2023-06-15 10:23 | Updated: 2023-06-15 14:45</p>
+            </div>
+            
+            <div class="note-item">
+                <h3 class="note-title">Meeting Notes</h3>
+                <p class="note-content">Discuss project timeline and resource allocation
+- Review current progress
+- Assign new tasks
+- Set next meeting date</p>
+                <p class="note-meta">Created: 2023-06-14 09:30 | Updated: 2023-06-14 09:30</p>
+            </div>
+            
+            <div class="note-item">
+                <h3 class="note-title">Ideas</h3>
+                <p class="note-content">1. Mobile app for note taking
+2. Cloud sync feature
+3. Dark mode theme
+4. Export to PDF functionality</p>
+                <p class="note-meta">Created: 2023-06-13 18:15 | Updated: 2023-06-15 08:20</p>
+            </div>
+            
+            <div class="note-item">
+                <h3 class="note-title">Book Recommendations</h3>
+                <p class="note-content">- "Atomic Habits" by James Clear
+- "Deep Work" by Cal Newport
+- "The Psychology of Money" by Morgan Housel</p>
+                <p class="note-meta">Created: 2023-06-10 21:05 | Updated: 2023-06-11 11:30</p>
+            </div>
+            
+            <div class="note-item">
+                <h3 class="note-title">(Untitled)</h3>
+                <p class="note-content">Remember to call mom about weekend plans.</p>
+                <p class="note-meta">Created: 2023-06-15 07:30 | Updated: 2023-06-15 07:30</p>
+            </div>
+            
+            <button class="button">View All Notes</button>
+        </div>
+    </div>
+
+    <script>
+        // This would be replaced with actual data loading from the notes app
+        // Just a demonstration of how it could work
+        document.addEventListener('DOMContentLoaded', function() {
+            // In a real implementation, this data would come from the app
+            const stats = {
+                totalNotes: 5,
+                notesToday: 2,
+                avgLength: '175 chars',
+                untitledNotes: 1
+            };
+            
+            // Update stats
+            document.getElementById('total-notes').textContent = stats.totalNotes;
+            document.getElementById('notes-today').textContent = stats.notesToday;
+            document.getElementById('avg-length').textContent = stats.avgLength;
+            document.getElementById('untitled-notes').textContent = stats.untitledNotes;
+            
+            // In a real implementation, we would also render charts
+        });
+    </script>
+</body>
+</html>
